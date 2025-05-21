@@ -69,6 +69,8 @@ window.onkeypress(move_right,"Right")
 window.listen()
 timer = 0
 obstacles=[]
+goods=[]
+fly=[]
 while True:
 	time.sleep(0.1)
 	timer += 1
@@ -78,19 +80,37 @@ while True:
 		x_position = random.randint(-150, 150)
 		s2 = create_sprite("applecore", x_position, y_position)
 		s2.setheading(180)
-		obstacles.append(s2) 
+		goods.append(s2) 
 
-	for s2 in obstacles:
+	for s2 in goods:
 		if get_distance (s1,s2) <50:
 			score+=1
-			obstacles.remove(s2)
+			goods.remove(s2)
 			s2.hideturtle()
+
+	if timer % 50 == 0 :
+		y_position = random.randint(-150, 150)
+		x_position = random.randint(-150, 150)
+		s3 = create_sprite("bomb", x_position, y_position)
+		s3.setheading(180)
+		obstacles.append(s3) 
+
+	for s3 in obstacles:
+		if get_distance (s1,s3) <50:
+			score+=-5
+			set_image(s3,"bomb2")
+			# time.sleep(2)
+			obstacles.remove(s3)
+			fly.append(s3)
+			# s2.hideturtle()
 			
-    
+		for s4 in fly:
+			s4.setheading(90)
+			s4.forward(75)
 	s1.clear()
 	s1.write(score,font = ("arial",40,"normal"))
 
-	if len(obstacles) == 5:
+	if len(goods) == 5:
 		break
  	# TODO - code for automatic actions
 
