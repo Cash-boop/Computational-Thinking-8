@@ -31,14 +31,14 @@ y4 =50
 # TODO - use your own background, and set your four turtles to images of your choice
 set_background("castle")
 t1 = create_sprite("bat",x1,y1)
-t2 = create_sprite("dog",x2,y2)
-t3 = create_sprite("odegard",x3,y3)
-t4 = create_sprite("lebron",x4,y4)
+t2 = create_sprite("fish",x2,y2)
+t3 = create_sprite("bench",x3,y3)
+t4 = create_sprite("fox",x4,y4)
 
 
 # # Section 4 - Racing
 # # TODO - set how much each variable changes by and increase the number of repeats to at least 30
-# # TODO - All of my sprites have a chance at winning but lebron is proabably the favorite.
+# # TODO - All of my sprites have a chance at winning but fox is proabably the favorite.
 for i in range(30):
     x1 += 8
 x2 +=random.randint (7,10)
@@ -57,11 +57,11 @@ time.sleep(0.1)
 if x1 >= x2 and x1 >= x3 and x1 >= x4:
     print("Cash wins!")
 elif x2 >= x1 and x2 >= x3 and x2 >= x4:
-    print("Dog wins!")
+    print("Fish dog wins!")
 elif x3 >= x2 and x3 >= x1 and x3 >= x4:
-    print("Odegard wins!")
+    print("Bench wins!")
 else:
-    print("Lebron wins!")
+    print("Fox wins!")
 
 
 
