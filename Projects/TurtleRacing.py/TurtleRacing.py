@@ -40,24 +40,24 @@ t4 = create_sprite("fox",x4,y4)
 # # TODO - set how much each variable changes by and increase the number of repeats to at least 30
 # # TODO - All of my sprites have a chance at winning but fox is proabably the favorite.
 for i in range(30):
-    x1 += 8
-x2 +=random.randint (7,10)
-x3 += random.randint(5,15)
-x4 += random.randint (3,25)
-t1.goto(x1, y1)
-t2.goto(x2, y2)
-t3.goto(x3, y3)
-t4.goto(x4, y4)
-time.sleep(0.1)
+	x1 += 8
+	x2 +=random.randint (7,10)
+	x3 += random.randint(5,15)
+	x4 += random.randint (3,25)
+	t1.goto(x1, y1)
+	t2.goto(x2, y2)
+	t3.goto(x3, y3)
+	t4.goto(x4, y4)
+	time.sleep(0.1)
 
 
 # # Section 5 - Winner
 # # TODO - complete the elif for player 2 winning
 # # TODO - write another elif for player 3 and player 4
 if x1 >= x2 and x1 >= x3 and x1 >= x4:
-    print("Cash wins!")
+    print("Bat wins!")
 elif x2 >= x1 and x2 >= x3 and x2 >= x4:
-    print("Fish dog wins!")
+    print("Fish wins!")
 elif x3 >= x2 and x3 >= x1 and x3 >= x4:
     print("Bench wins!")
 else:
